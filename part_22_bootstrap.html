@@ -1,85 +1,179 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Frontend. Заняття 22. Фреймворк Бутстрап.</title>
-	<meta charset="utf-8">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="format-detection" content="telephone=no">
-	<link type="text/css" rel="stylesheet" href="css/styles.css">
+    <title>Frontend. Заняття 22. Фреймворк Бутстрап.</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-<div id="mainwrapper">
-	<div class="resize">
-
-		<h1>Фреймворк Бутстрап.</h1>
-		<p><strong>Twitter Bootstrap</strong> - фреймворк (заготовка, напівфабрикат, набір шаблонів) для швидкого створення веб-сайтів.</p>
-		<p>Він складається зі зручної CSS-сітки, набору візуальних компонентів та скриптів.</p>
-		<p>Поточна версія - <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a>.</p>
-		<p>Нова версія на стадії альфа-тестування - <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.</p>
-
-		<section>
-			<h2>1. Сітка Бутстрапа.</h2>
-			<p>В Бутстрапі прийнято метод "від меншого екрану до більшого", всі стилі заточені під мобільні пристрої з невеликими екранами та розширяються для великих екранів.</p>
-			<p>По замовчуванню в сітці прописані <a href="http://getbootstrap.com/css/#grid" target="_blank">три стоп-точки</a>: <strong>768px</strong>, <strong>992px</strong> та <strong>1200px</strong>, що дає 4 типо-розміри екранів:<br>
-				<strong>col-xs-*</strong>;<br>
-				<strong>col-sm-*</strong>;<br>
-				<strong>col-md-*</strong>;<br>
-				<strong>col-lg-*</strong>.</p>
-			<code>
-				.col-* { float: left; width: 100%; }<br>
-				.col-xs-1 { width: 8,33333333%; }<br>
-				.col-xs-2 { width: 16,66666666%; }<br>
-				.col-xs-3 { width: 25%; }<br>
-				...<br>
-				.col-xs-10 { width: 83,33333333%; }<br>
-				.col-xs-11 { width: 91,66666666%; }<br><br>
-				@media (min-width: 768px) {<br>
-				&nbsp;&nbsp;col-sm-* { width: ...; }<br>
-				}<br><br>
-				@media (min-width: 992px) {<br>
-				&nbsp;&nbsp;col-md-* { width: ...; }<br>
-				}<br><br>
-				@media (min-width: 1200px) {<br>
-				&nbsp;&nbsp;col-lg-* { width: ...; }<br>
-				}
-			</code>
-			<p>В разі потреби Бутстрап можна <a href="http://getbootstrap.com/customize/" target="_blank">переналаштувати</a>, задавши свої три стоп-точки, свої відступи і т.п.</p>
-		</section>
-
-		<section>
-			<h2>2. Компоненти Бутстрапа.</h2>
-			<p>В Бутстрапі є <a href="http://getbootstrap.com/components/" target="_blank">багато заготовок</a> для різноманітних <a href="http://getbootstrap.com/css/" target="_blank">стандартних елементів</a> веб-сторінок:<br>
-				- іконки;<br>
-				- випадаючі списки;<br>
-				- групи елементів;<br>
-				- кнопки;<br>
-				- форми, поля вводу;<br>
-				- таби;<br>
-				- панель навігації і тому подібне.
-			</p>
-			<p>Якщо вам потрібні тільки ці компоненти - цілком достатньо підключити в проект тільки файл стилів <strong>bootstrap.min.css</strong></p>
-			<p>Але в Бутстрапі є ще <a href="http://getbootstrap.com/javascript/" target="_blank"></a>багато компонентів, що використовують javascript. Їх ми розглянемо детальніше після вивчення JS та бібліотеки jQuery.</p>
-			<p>Для використання цих компонентів потрібно підключити бібліотеку <strong>jquery.min.js</strong> та бібліотеку <strong>bootstrap.min.js</strong>.</p>
-		</section>
-
-		<section>
-			<h2>3. Використання Бутстрапа.</h2>
-			<p>Якщо вам потрібна тільки сітка - ви можете піделючити тільки файл стилів. Або ж створити свою сітку на основі бутстрапівської, де не буде зайвих класів.</p>
-			<p>Та у великих проектах як правило знадобляться різноманітні компоненти з фреймворка.</p>
-			<p>Є <a href="https://almsaeedstudio.com/" target="_blank">готові шаблони</a> (платні та безкоштовні), з яких сайт збирається як конструктор.<br>
-				Гугл: <strong>free bootstrap template</strong>, <strong>free bootstrap admin template</strong>.</p>
-			<p><strong class="danger">Чого не варто робити:</strong></p>
-			<p>- редагувати файл <strong>bootstrap.css</strong> чи <strong>bootstrap.min.css</strong>;</p>
-			<p>- глобально перевизначати класи:</p>
-			<code>
+    <div id="mainwrapper">
+        <div class="resize">
+            <h1>Фреймворк Бутстрап.</h1>
+            <p><strong>Twitter Bootstrap</strong> - фреймворк (заготовка, напівфабрикат, набір шаблонів) для швидкого створення веб-сайтів.</p>
+            <p>Він складається зі зручної CSS-сітки, набору візуальних компонентів та скриптів.</p>
+            <p>Поточна версія - <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3</a>.</p>
+            <p>Нова версія на стадії beta-тестування - <a href="https://getbootstrap.com/" target="_blank">Bootstrap 4</a>.</p>
+            <p>В Bootstrap 4 в систему сіток, з якої ми всі знайомі з третьої версії, було внесено кілька змін. Була додана нова сітка XL, змінилися деякі класи-модифікатори, а також з'явилася абсолютно нова система сіток на flexbox</p>
+            <p>Найпоширеніший спосіб підключити Bootstrap до проекту - CDN або через локальний файл. Є дві скомпільовані версії, для flexbox і звичайна:</p>
+            <code>
+							&lt;!-- Звичайний Bootstrap --&gt;<br>
+							&lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+							&lt;!-- Bootstrap з сіткою Flexbox --&gt;<br>
+							&lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap-flex.min.css" rel="stylesheet"&gt;
+						</code>
+            <p>У плані ваги flexbox версія важить трохи більше через додаткові правила і вендорні префікси. Однак відмінність несильно (119Кб проти 105Кб), в більшості випадків ніякої різниці не буде.</p>
+            <section>
+                <h2>1. Стандартна сітка.</h2>
+                <p>Сьогодні вже всі знають, як працює сітка в Bootstrap. Є рядок, розбита на 12 рівних частин, всередині якої йдуть стовпці. Кожен стовпець може займати від 1 до 12 частин:</p>
+                <code>
+									&lt;div class="row"&gt;<br>
+									&lt;div class="col-xs-2"&gt;.col-xs-2&lt;/div&gt;<br>
+									&lt;div class="col-xs-4"&gt;.col-xs-4&lt;/div&gt;<br>
+									&lt;div class="col-xs-6"&gt;.col-xs-6&lt;/div&gt;<br>
+									&lt;/div&gt;
+								</code>
+                <p>Новий режим flexbox дозволяє макету автоматично підбирати кількість колонок. Розмір вказувати більше не потрібно.</p>
+                <code>
+									&lt;div class="row"&gt;<br>
+									&lt;div class="col-xs"&gt;.col-xs&lt;/div&gt;<br>
+									&lt;div class="col-xs"&gt;.col-xs&lt;/div&gt;<br>
+									&lt;div class="col-xs"&gt;.col-xs&lt;/div&gt;<br>
+									&lt;/div&gt;
+								</code>
+                <p>Безрозмірні колонки в сітці flexbox будуть порівну ділити обсяг пам'яті, доступний, завжди заповнюючи весь ряд. Клас .col-xs-size все ще дозволяє змінювати розмір колонок.</p>
+                <p>Щоб допомогти вам уявити дві системи, ми підготували <a href="http://demo.tutorialzine.com/2016/11/boostrap-4-regular-vs-flex-grid/?1-basic-grid" target="_blank">демо обох сіток</a>. Скріншот з демо показаний нижче:</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/1.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+                <p>В разі потреби Бутстрап можна <a href="http://getbootstrap.com/customize/" target="_blank">переналаштувати</a>, задавши свої стоп-точки, свої відступи і т.п.</p>
+            </section>
+            <section>
+                <h2>2. Перехід колонок на новий рядок.</h2>
+                <p>Коли колонок в рядку стає більше 12, тринадцята колонка перестрибує на наступний рядок. Ефект називається перехід стовпця і працює однаково в звичайній сітці і flex-bootstrap.</p>
+                <code>
+									&lt;div class="row"&gt;<br>
+									&lt;div class="col-xs-6"&gt;.col-xs-6&lt;/div&gt;<br>
+									&lt;div class="col-xs-6"&gt;.col-xs-6&lt;/div&gt;<br>
+									&lt;div class="col-xs-3"&gt;.col-xs-3, This column will move to the next line.&lt;/div&gt;<br>
+									&lt;/div&gt;
+							</code>
+                <p>Єдине, на що варто звернути увагу, це те, що в режимі автомакетировання безрозмірна колонка може розтягнутися на весь рядок, якщо вона не вмістилася на попередній.</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/2.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>3. Адаптивна сітка.</h2>
+                <p>У вступі ми згадали новий вид сітки, XL. Медіа запити тепер виглядають так:</p>
+                <ul>
+                    <li>Extra small (xs) – нижче 576px</li>
+                    <li>Small (sm) – від 576px до 768px</li>
+                    <li>Medium (md) – від 768px до 992px</li>
+                    <li>Large (lg) – від 992px до 1200px</li>
+                    <li>Extra Large (xl) – вище 1200px</li>
+                </ul>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/3.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>4. Висота колонок.</h2>
+                <p>Старі сітки працювали на обтікання, тому всі колонки були різної висоти. Висота визначалася контентом.</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/4.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+                <p>У flexbox макетах всі комірки в рядку мають висоту колонки з найбільшим контентом.</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/5.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>5. Горизонтальне вирівнювання.</h2>
+                <p>У звичайному Bootstrap горизонтальне позиціонування колонок виконується через систему зсувів. Зміщення працюють, як порожні колонки, і дозволяють зрушувати елементи вправо (наприклад, .offset-xs-3 зрушує колонку на 3 вправо). Такий підхід сильно дратує, так як нам необхідно вручну налаштовувати сдвиг..</p>
+                <code>
+									&lt;div class="row"&gt;<br>
+									&lt;div class="col-xs-6 offset-xs-3"&gt;This column is now centered.&lt;/div&gt;<br>
+									&lt;/div&gt;
+							</code>
+                <p>Завдяки властивості justify-content, щоб змістити колонку в flex bootstrap по горизонталі, достатньо додати правильний клас.</p>
+                <code>
+									&lt;div class="row flex-items-xs-center"&gt;<br>
+									&lt;div class="col-xs-6"&gt;All columns in that row will be automatically centered.&lt;/div&gt;<br>
+									&lt;/div&gt;
+							</code>
+                <p>Якщо хочете використовувати здвиг, будь ласка!</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/6.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>6. Вертикальне вирівнювання.</h2>
+                <p>У звичайному Bootstrap не можна виробляти вертикальне вирівнювання. Єдиний спосіб домогтися вертикального позиціонування - використовувати для користувача CSS, що часто засмічує код.</p>
+                <p>Flexbox відмінно справляється з вирівнюванням в макеті і дає нам цілих два способи вертикального позиціонування колонок:</p>
+                <code>
+								&lt;div class="row flex-items-xs-middle"&gt;<br>
+									&lt;div class="col-xs"> Middle &lt;/div&gt;<br>
+								&lt;/div&gt;<br>
+									&lt;div class="row flex-items-xs-bottom"&gt;<br>
+									&lt;div class="col-xs"> Bottom &lt;/div&gt;<br>
+								&lt;/div&gt;<br>
+									&lt;div class="row flex-items-xs-top"&gt;<br>
+									&lt;div class="col-xs"> Top &lt;/div&gt;<br>
+								&lt;/div&gt;
+							</code>
+                <p>Вирівнюйте стовпці в рядку окремо один від одного:</p>
+                <code>
+								&lt;div class="row"&gt;<br>
+								&lt;div class="col-xs flex-xs-middle"&gt; Middle &lt;/div&gt;<br>
+								&lt;div class="col-xs flex-xs-bottom"&gt; Bottom &lt;/div&gt;<br>
+								&lt;div class="col-xs flex-xs-top"&gt; Top &lt;/div&gt;<br>
+								&lt;/div&gt;
+							</code>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/7.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>7. Сортування колонок.</h2>
+                <p>У звичайній системі сіток, якщо нам необхідно поміняти порядок колонок, нам потрібно використовувати push і pull. Чи не краще дизайнерське рішення, але воно працює.</p>
+                <code>
+               	&lt;div class="row"&gt;<br>
+								&lt;div class="col-xs-4 push-md-8"&gt; On MD screens this column will move 8 spaces to the right. &lt;/div&gt;<br>
+								&lt;div class="col-xs-8 pull-md-4"&gt; On MD screens this column will move 4 spaces to the left.&lt;/div&gt;<br>
+								&lt;/div&gt;
+               </code>
+                <p>Хто раніше вже працював з flexbox, знає, що там є вбудоване властивість order. Розробники Bootstrap реалізували його на основі трьох класів сортування:</p>
+                <ul>
+                    <li>.flex-xs-first – відображається першим.</li>
+                    <li>.flex-xs-last – відображається останнім.</li>
+                    <li>.flex-xs-unordered – відображається між першим і останнім.</li>
+                </ul>
+                <p>Вручну обчислювати нічого не потрібно. Якщо потрібно впорядкувати понад три колонок, що буває рідко, можна використовувати push / pull або властивість order в CSS.</p>
+                <img src="https://webformyself.com/wp-content/uploads/2016/800/8.png" alt="Bootstrap 4: звичайна сітка або flexbox" width="700">
+            </section>
+            <section>
+                <h2>8. Компоненти Бутстрапа.</h2>
+                <p>В Бутстрапі є <a href="http://getbootstrap.com/components/" target="_blank">багато заготовок</a> для різноманітних <a href="http://getbootstrap.com/css/" target="_blank">стандартних елементів</a> веб-сторінок:
+                    <br> - іконки;
+                    <br> - випадаючі списки;
+                    <br> - групи елементів;
+                    <br> - кнопки;
+                    <br> - форми, поля вводу;
+                    <br> - таби;
+                    <br> - панель навігації і тому подібне.
+                </p>
+                <p>Якщо вам потрібні тільки ці компоненти - цілком достатньо підключити в проект тільки файл стилів <strong>bootstrap.min.css</strong></p>
+                <p>Але в Бутстрапі є ще <a href="http://getbootstrap.com/javascript/" target="_blank"></a>багато компонентів, що використовують javascript. Їх ми розглянемо детальніше після вивчення JS та бібліотеки jQuery.</p>
+                <p>Для використання цих компонентів потрібно підключити бібліотеку <strong>jquery.min.js</strong> та бібліотеку <strong>bootstrap.min.js</strong>.</p>
+            </section>
+            <section>
+                <h2>9. Використання Бутстрапа.</h2>
+                <p>Якщо вам потрібна тільки сітка - ви можете піделючити тільки файл стилів. Або ж створити свою сітку на основі бутстрапівської, де не буде зайвих класів.</p>
+                <p>Та у великих проектах як правило знадобляться різноманітні компоненти з фреймворка.</p>
+                <p>Є <a href="https://almsaeedstudio.com/" target="_blank">готові шаблони</a> (платні та безкоштовні), з яких сайт збирається як конструктор.
+                    <br> Гугл: <strong>free bootstrap template</strong>, <strong>free bootstrap admin template</strong>.</p>
+                <p><strong class="danger">Чого не варто робити:</strong></p>
+                <p>- редагувати файл <strong>bootstrap.css</strong> чи <strong>bootstrap.min.css</strong>;</p>
+                <p>- глобально перевизначати класи:</p>
+                <code>
 				.col-lg-6 { float: none; }<br>
 				.col-sm-2 { width: 25%; }<br>
 				.col-md-4 { padding: 6px 40px; }<br>
 				.col-xs-7 { position: absolute; }
 			</code>
-			<p>- не дотримуватися почерговості .row та .col-*:</p>
-			<code>
+                <p>- не дотримуватися почерговості .row та .col-*:</p>
+                <code>
 				&lt;div class="container-fluid"&gt;<br>
 				&nbsp;&nbsp;&lt;div class="container"&gt;...&lt;/div&gt;<br>
 				&lt;/div&gt;<br><br>
@@ -90,13 +184,13 @@
 				&nbsp;&nbsp;&lt;div class="col-*"&gt;&lt;/div&gt;<br>
 				&lt;/div&gt;
 			</code>
-			<p>- дублювати класи:</p>
-			<code>
+                <p>- дублювати класи:</p>
+                <code>
 				&lt;div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"&gt;...&lt;/div&gt;
 			</code>
-			<p>- підключати Бутстрап заради невеличкого блоку, кольорових кнопок чи ще якихось дрібниць і не використовувати його потужності;</p>
-			<p>Часто в верстці під Бутстрап зустрічаю кнопки всередині посилань. Так робити не треба: посилання - це активний елемент, і кнопка - активний елемент:</p>
-			<code>
+                <p>- підключати Бутстрап заради невеличкого блоку, кольорових кнопок чи ще якихось дрібниць і не використовувати його потужності;</p>
+                <p>Часто в верстці під Бутстрап зустрічаю кнопки всередині посилань. Так робити не треба: посилання - це активний елемент, і кнопка - активний елемент:</p>
+                <code>
 				&lt;!-- не вірно: --&gt;<br>
 				&lt;a href="#"&gt;&lt;button class="btn btn-lg btb-info"&gt;Кнопка&lt;/button&gt;&lt;/a&gt;<br><br>
 				&lt;!-- вірно: --&gt;<br>
@@ -104,18 +198,20 @@
 				&lt;button class="btn btn-lg btb-info"&gt;Кнопка&lt;/button&gt;<br>
 				&lt;span class="btn btn-lg btb-info"&gt;Кнопка&lt;/span&gt;
 			</code>
-		</section>
-
-		<!-- TODO: bootstrap 4 https://youtu.be/g25wH4Xtyh8 -->
-
-		<section class="homework">
-			<h2>Домашнє завдання.</h2>
-			<h3>Рівень 1.</h3>
-			<p>1. Підключіть в проект Minecraft (<a href="files/psd/minecraft.jpg" target="_blank">jpg</a>) файл стилів Бутстрап та використайте його сітку та деякі компоненти. Почистіть свій файл стилів від зайвих класів.</p>
-		</section>
-
-	</div>
-</div>
-
+            </section>
+            <section>
+                <h2>Висновок.</h2>
+                <p>Якщо ще раз повернутися до основних пунктів заняття, стає ясно, що flexbox - більш просунута і універсальна система сіток. Flexbox версія включає в себе все зі звичайної сітки, плюс свої функції. Єдиний недолік bootstrap-flex - це відсутність підтримки в IE9.</p>
+                <p>Так ми закінчуємо наше порівняння систем сіток в новому Bootstrap 4. Додавайте в закладки сторінку з демо, щоб мати їх завжди під рукою. Сподіваємося, заняття виявилося корисним! Вдало покодити :)</p>
+            </section>
+            <!-- TODO: bootstrap 4 https://youtu.be/g25wH4Xtyh8 -->
+            <section class="homework">
+                <h2>Домашнє завдання.</h2>
+                <h3>Рівень 1.</h3>
+                <p>1. Підключіть в проект Minecraft (<a href="files/psd/minecraft.jpg" target="_blank">jpg</a>) файл стилів Бутстрап та використайте його сітку та деякі компоненти. Почистіть свій файл стилів від зайвих класів.</p>
+            </section>
+        </div>
+    </div>
 </body>
+
 </html>
